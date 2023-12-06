@@ -1,61 +1,60 @@
-class Pizza:
+# klasse_pizza.py
+
+from klasse_italienisches_essen import Italienisches_Essen
+
+class Pizza(Italienisches_Essen):
+    """
+    Klasse, die eine Pizza darstellt.
+
+    Attribute:
+        pizzaAnzahl (int): Gesamtanzahl der bisher erstellten Pizzas.
+        gueltigeZutaten (list): Liste gültiger Zutaten für die Pizza.
+        gueltigeSaucen (list): Liste gültiger Saucen für die Pizza.
+    """
     pizzaAnzahl = 0
     gueltigeZutaten = ["Salami", "Pilze", "Hackfleisch", "Schinken", "Paprika", "Oliven"]
     gueltigeSaucen = ["Tomaten", "Barbecue", "Creme Fraiche"]  
 
-    def __init__(self, zutat_1, zutat_2, zutat_3, sauce="Tomaten"):
+    def __init__(self, anzahl, zutat_1, zutat_2, zutat_3, scharf=Italienisches_Essen.scharf, extrakaese=Italienisches_Essen.extrakaese):
         """
-        Initialisierung der Pizza.
+        Konstruktor der Klasse Pizza.
 
         Args:
-            zutat_1 (str): Erste Zutat.
-            zutat_2 (str): Zweite Zutat.
-            zutat_3 (str): Dritte Zutat.
-            sauce (str): Art der Sauce, standardmäßig Tomatensauce.
+            anzahl (int): Anzahl der Pizzas.
+            zutat_1, zutat_2, zutat_3 (str): Zutaten für die Pizza.
+            scharf (bool): Wahr, wenn die Pizza scharf sein soll.
+            extrakaese (bool): Wahr, wenn zusätzlicher Käse gewünscht ist.
         """
-        self.setze_zutaten(zutat_1, zutat_2, zutat_3)
-        self.setze_sauce(sauce)
-        Pizza.pizzaAnzahl += 1
+        super().__init__(anzahl, scharf, extrakaese)
+        self.zutat_1 = zutat_1
+        self.zutat_2 = zutat_2
+        self.zutat_3 = zutat_3
 
-    def setze_zutaten(self, z_1, z_2, z_3):
+    def pizza_belegen(self, z_1, z_2, z_3):
         """
-        Setzt und validiert die Zutaten der Pizza.
+        Ändert die Zutaten der Pizza.
 
         Args:
-            z_1 (str): Erste Zutat.
-            z_2 (str): Zweite Zutat.
-            z_3 (str): Dritte Zutat.
+            z_1, z_2, z_3 (str): Die neuen Zutaten für die Pizza.
         """
-        if z_1 not in Pizza.gueltigeZutaten or z_2 not in Pizza.gueltigeZutaten or z_3 not in Pizza.gueltigeZutaten:
-            raise ValueError("Eine oder mehrere Zutaten sind nicht gültig.")
         self.zutat_1 = z_1
         self.zutat_2 = z_2
         self.zutat_3 = z_3
 
-    def setze_sauce(self, sauce):
+    def essen_kochen(self):
         """
-        Setzt und validiert die Sauce der Pizza.
+        Bereitet die Pizza zu und gibt eine Beschreibung des Vorgangs zurück.
 
-        Args:
-            sauce (str): Art der Sauce.
+        Returns:
+            str: Beschreibung der Zubereitung der Pizza, einschließlich der verwendeten Zutaten und ob sie scharf oder mit extra Käse zubereitet wird.
         """
-        if sauce not in Pizza.gueltigeSaucen:
-            raise ValueError("Ungültige Sauce.")
-        self.sauce = sauce
-
-    def pizza_belegen(self, z_1, z_2, z_3, sauce=None):
-        """
-        Ändert die Zutaten und ggf. die Sauce der Pizza.
-
-        Args:
-            z_1 (str): Erste neue Zutat.
-            z_2 (str): Zweite neue Zutat.
-            z_3 (str): Dritte neue Zutat.
-            sauce (str): Neue Sauce, falls angegeben.
-        """
-        self.setze_zutaten(z_1, z_2, z_3)
-        if sauce:
-            self.setze_sauce(sauce)
+        zubereitung = f"Pizza wird mit {self.zutat_1}, {self.zutat_2}, {self.zutat_3} belegt."
+        zubereitung += f" Gebacken mit {self.default_sauce}-Sauce."
+        if self.scharf:
+            zubereitung += " Zusätzlich scharf gewürzt."
+        if self.extrakaese:
+            zubereitung += " Extra Käse hinzugefügt."
+        return zubereitung
 
     def __str__(self):
         """
@@ -64,5 +63,5 @@ class Pizza:
         Returns:
             str: Beschreibung der Pizza, einschließlich Zutaten, Standardsoße und Gesamtanzahl der Pizzas. 
         """
-        return f"Pizza mit {self.zutat_1}, {self.zutat_2}, {self.zutat_3}. Sauce: {self.sauce}. Gesamtanzahl Pizzen: {Pizza.pizzaAnzahl}"
+        return f"Pizza mit {self.zutat_1}, {self.zutat_2}, {self.zutat_3}. Sauce: {self.default_sauce}. Scharf: {self.scharf}, Extrakäse: {self.extrakaese}"
 

@@ -1,15 +1,14 @@
+# Gruppe Pizza.py
+
 from klasse_pizza import Pizza
 from klasse_nudeln import Nudeln
 
+
 # Klasse Pizza
-
-meine_pizza = Pizza("Salami", "Pilze", "Oliven", "Barbecue")
-print(meine_pizza)
-
-meine_pizza.pizza_belegen("Schinken", "Paprika", "Hackfleisch", "Creme Fraiche")
-print(meine_pizza)
+meine_pizza = Pizza(1, "Salami", "Pilze", "Oliven", True, True)
+print(meine_pizza.essen_kochen())
 
 # Nudeln Klasse: (modul pygame, sys erforderlich. klasse_nudeln.py, nudeln_spagetti.jpg erforderlich)
-nudeln01 = Nudeln(2, 1, False, True) #Sauce, Pasta, Scharf, Extrakaese
-print(nudeln01)
-nudeln01.nudeln_herstellen()
+meine_nudeln = Nudeln(1, "Spaghetti", "Carbonarasauce", False, False)
+print(meine_nudeln.essen_kochen())
+meine_nudeln.nudeln_herstellen()

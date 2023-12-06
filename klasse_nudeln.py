@@ -1,5 +1,8 @@
+# klasse_pizza.py
+
 import pygame
 import sys
+from klasse_italienisches_essen import Italienisches_Essen
 
 # planmäßig als attribut von oben
 # anzahl                #atm prov. lokal
@@ -11,32 +14,36 @@ import sys
 list_pasta = ("Spagetti", "Rigatoni", "Penne")
 list_sauce = ("Tomatensauce", "Hackfleischsauce", "Carbonarasauce")
 
-
-class Nudeln():
+class Nudeln(Italienisches_Essen):
     """
-        Klasse, die ein Nudelgericht darstellt.
+    Klasse, die ein Nudelgericht darstellt.
 
-        Attribute:
-            pas (int): Auswahl der Pasta über Element aus Liste
-            sau (int): Auswahl der Sauce über Element aus Liste
-            scha (bool): Scharf ja/nein
-            exkae (bool): Extrakäse ja/nein
-
-
-        Methoden:
-            __init__: Konstruktor, der ein neues Nudelgericht erstellt
-            nudeln_herstellen: gibt ein Bild bei Ausruf aus
-            __str__(): Gibt eine Beschreibung des Nudelgerichtes zurück.
+    Attribute:
+        pasta_typ (str): Typ der Pasta für das Gericht.
+        sauce_typ (str): Typ der Sauce für das Gericht.
     """
 
-    def __init__(self, pas, sau, scha, exkae):
-        self.pasta = list_pasta[pas]
-        self.sauce = list_sauce[sau]
-        self.scharf = scha
-        self.extrakaese = exkae
+    def __init__(self, anzahl, pasta_typ, sauce_typ, scharf=Italienisches_Essen.scharf, extrakaese=Italienisches_Essen.extrakaese):
+        """
+        Konstruktor der Klasse Nudeln.
+
+        Args:
+            anzahl (int): Anzahl der Nudelportionen.
+            pasta_typ (str): Typ der Pasta.
+            sauce_typ (str): Typ der Sauce.
+            scharf (bool): Wahr, wenn das Gericht scharf sein soll.
+            extrakaese (bool): Wahr, wenn zusätzlicher Käse gewünscht ist.
+        """
+        super().__init__(anzahl, scharf, extrakaese)
+        self.pasta_typ = pasta_typ
+        self.sauce_typ = sauce_typ
 
 
     def nudeln_herstellen(self):
+        """
+        Zeigt ein Bild des Nudelgerichts mithilfe von Pygame.
+        Erfordert Pygame und einen gültigen Bildpfad.
+        """
         pygame.init()
         width, height = 800, 600
         screen = pygame.display.set_mode((width, height))
@@ -52,6 +59,20 @@ class Nudeln():
             screen.blit(image, (0, 0))
             pygame.display.flip()
 
+    def essen_kochen(self):
+        """
+        Gibt eine Beschreibung des Nudelgerichts mit Details zu Pasta-Typ, Sauce und weiteren Eigenschaften zurück.
+
+        Returns:
+            str: Beschreibung des Nudelgerichts.
+        """
+        zubereitung = f"Nudeln {self.pasta_typ} werden mit {self.sauce_typ} zubereitet."
+        if self.scharf:
+            zubereitung += " Zusätzlich scharf gewürzt."
+        if self.extrakaese:
+            zubereitung += " Mit extra Käse serviert."
+        return zubereitung
+
     def __str__(self):
         """
         Gibt eine Beschreibung des Nudelgerichts zurück.
@@ -59,6 +80,6 @@ class Nudeln():
         Returns:
             str: Beschreibung des Nudelgerichts.
         """
-        return f"Nudelgericht {self.pasta} mit {self.sauce}\nScharf:{self.scharf} Extrakäse:{self.extrakaese}"
+        return f"Nudelgericht {self.pasta_typ} mit {self.sauce_typ}. Sauce: {self.default_sauce}. Scharf: {self.scharf}, Extrakäse: {self.extrakaese}"
 
 
