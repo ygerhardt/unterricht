@@ -5,7 +5,7 @@ from klasse_nudeln import Nudeln
 
 
 # Klasse Pizza
-meine_pizza = Pizza(1, "Salami", "Pilze", "Oliven", True, True)
+meine_pizza = Pizza(1, "Salami", "Pilze", "Oliven", sauce="Tomaten", scharf=True, extrakaese=True)
 print(meine_pizza.essen_kochen())
 
 # Nudeln Klasse: (modul pygame, sys erforderlich. klasse_nudeln.py, nudeln_spagetti.jpg erforderlich)

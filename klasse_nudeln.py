@@ -4,16 +4,6 @@ import pygame
 import sys
 from klasse_italienisches_essen import Italienisches_Essen
 
-# planmäßig als attribut von oben
-# anzahl                #atm prov. lokal
-# list_sauce = ("Hackfleischsauce", "Tomatensauce", "Carbonarasauce")   #atm prov. lokal
-# scharf                #atm prov. lokal
-# extrakäse             #atm prov. lokal
-# scharf                #atm prov. lokal
-# extrakaese            #atm prov. lokal
-list_pasta = ("Spagetti", "Rigatoni", "Penne")
-list_sauce = ("Tomatensauce", "Hackfleischsauce", "Carbonarasauce")
-
 class Nudeln(Italienisches_Essen):
     """
     Klasse, die ein Nudelgericht darstellt.
@@ -23,7 +13,7 @@ class Nudeln(Italienisches_Essen):
         sauce_typ (str): Typ der Sauce für das Gericht.
     """
 
-    def __init__(self, anzahl, pasta_typ, sauce_typ, scharf=Italienisches_Essen.scharf, extrakaese=Italienisches_Essen.extrakaese):
+    def __init__(self, anzahl, pasta_typ=Italienisches_Essen.default_pasta, sauce_typ=Italienisches_Essen.default_sauce, scharf=Italienisches_Essen.scharf, extrakaese=Italienisches_Essen.extrakaese):
         """
         Konstruktor der Klasse Nudeln.
 
@@ -66,7 +56,7 @@ class Nudeln(Italienisches_Essen):
         Returns:
             str: Beschreibung des Nudelgerichts.
         """
-        zubereitung = f"Nudeln {self.pasta_typ} werden mit {self.sauce_typ} zubereitet."
+        zubereitung = f"Nudeln der Sorte {self.pasta_typ} werden mit {self.sauce_typ} zubereitet."
         if self.scharf:
             zubereitung += " Zusätzlich scharf gewürzt."
         if self.extrakaese:

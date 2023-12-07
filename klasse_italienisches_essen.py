@@ -7,13 +7,21 @@ class Italienisches_Essen:
     Attribute:
         anzahl (int): Anzahl der Portionen.
         list_sauce (list): Liste verfügbarer Saucen.
-        default_sauce (str): Standard-Sauce für das Gericht.
+        list_zutat (list): Liste verfügbarer Zutaten
+        list_pasta (list): Liste verfügbarer Pastasorten
+        default_sauce (str): Standardsauce für das Gericht.
+        default_zutat (str): Standardzutat für das Gericht.
+        default_pasta (str): Standardpastasorte für das Gericht.
         scharf (bool): Gibt an, ob das Gericht scharf sein soll.
         extrakaese (bool): Gibt an, ob zusätzlicher Käse hinzugefügt werden soll.
     """
     anzahl = 0
-    list_sauce = ["Tomatensauce", "Hollandaisesauce", "Carbonarasauce"]
+    list_sauce = ["Tomatensauce", "Hollandaisesauce", "Carbonarasauce", "Barbecue", "Creme Fraiche"]
+    list_zutat = ["Salami", "Pilze", "Hackfleisch", "Schinken", "Paprika", "Oliven"]
+    list_pasta = ["Spaghetti", "Rigatoni", "Penne"]
     default_sauce = list_sauce[0]
+    default_zutat = list_zutat[0]
+    default_pasta = list_zutat[0]
     scharf = False
     extrakaese = False
 

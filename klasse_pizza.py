@@ -11,11 +11,8 @@ class Pizza(Italienisches_Essen):
         gueltigeZutaten (list): Liste gültiger Zutaten für die Pizza.
         gueltigeSaucen (list): Liste gültiger Saucen für die Pizza.
     """
-    pizzaAnzahl = 0
-    gueltigeZutaten = ["Salami", "Pilze", "Hackfleisch", "Schinken", "Paprika", "Oliven"]
-    gueltigeSaucen = ["Tomaten", "Barbecue", "Creme Fraiche"]  
 
-    def __init__(self, anzahl, zutat_1, zutat_2, zutat_3, scharf=Italienisches_Essen.scharf, extrakaese=Italienisches_Essen.extrakaese):
+    def __init__(self, anzahl, zutat_1=Italienisches_Essen.default_zutat, zutat_2=Italienisches_Essen.default_zutat, zutat_3=Italienisches_Essen.default_zutat, sauce=Italienisches_Essen.default_sauce, scharf=Italienisches_Essen.scharf, extrakaese=Italienisches_Essen.extrakaese):
         """
         Konstruktor der Klasse Pizza.
 
@@ -29,6 +26,7 @@ class Pizza(Italienisches_Essen):
         self.zutat_1 = zutat_1
         self.zutat_2 = zutat_2
         self.zutat_3 = zutat_3
+        self.default_sauce = sauce
 
     def pizza_belegen(self, z_1, z_2, z_3):
         """
@@ -49,7 +47,7 @@ class Pizza(Italienisches_Essen):
             str: Beschreibung der Zubereitung der Pizza, einschließlich der verwendeten Zutaten und ob sie scharf oder mit extra Käse zubereitet wird.
         """
         zubereitung = f"Pizza wird mit {self.zutat_1}, {self.zutat_2}, {self.zutat_3} belegt."
-        zubereitung += f" Gebacken mit {self.default_sauce}-Sauce."
+        zubereitung += f" Gebacken mit {self.default_sauce}sauce."
         if self.scharf:
             zubereitung += " Zusätzlich scharf gewürzt."
         if self.extrakaese:
