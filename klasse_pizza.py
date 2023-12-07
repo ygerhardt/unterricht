@@ -22,6 +22,7 @@ class Pizza(Italienisches_Essen):
             scharf (bool): Wahr, wenn die Pizza scharf sein soll.
             extrakaese (bool): Wahr, wenn zusätzlicher Käse gewünscht ist.
         """
+        super().__init__(anzahl, scharf, extrakaese)
         self.zutat_1 = zutat_1
         self.zutat_2 = zutat_2
         self.zutat_3 = zutat_3

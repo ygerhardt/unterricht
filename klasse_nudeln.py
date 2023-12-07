@@ -24,6 +24,7 @@ class Nudeln(Italienisches_Essen):
             scharf (bool): Wahr, wenn das Gericht scharf sein soll.
             extrakaese (bool): Wahr, wenn zusätzlicher Käse gewünscht ist.
         """
+        super().__init__(anzahl, scharf, extrakaese)
         self.pasta_typ = pasta_typ
         self.sauce_typ = sauce_typ
 
