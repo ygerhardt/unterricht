@@ -47,7 +47,7 @@ class Pizza(Italienisches_Essen):
             str: Beschreibung der Zubereitung der Pizza, einschließlich der verwendeten Zutaten und ob sie scharf oder mit extra Käse zubereitet wird.
         """
         zubereitung = f"Pizza wird mit {self.zutat_1}, {self.zutat_2}, {self.zutat_3} belegt."
-        zubereitung += f" Gebacken mit {self.default_sauce}sauce."
+        zubereitung += f" Gebacken mit {self.default_sauce}."
         if self.scharf:
             zubereitung += " Zusätzlich scharf gewürzt."
         if self.extrakaese:
