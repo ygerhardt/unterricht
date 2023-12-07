@@ -21,7 +21,7 @@ class Italienisches_Essen:
     list_pasta = ["Spaghetti", "Rigatoni", "Penne"]
     default_sauce = list_sauce[0]
     default_zutat = list_zutat[0]
-    default_pasta = list_zutat[0]
+    default_pasta = list_pasta[0]
     scharf = False
     extrakaese = False
 
@@ -38,10 +38,9 @@ class Italienisches_Essen:
         self.scharf = scharf
         self.extrakaese = extrakaese
 
-
-def essen_kochen():
-    """
+    def essen_kochen():
+        """
         Methode zum Kochen des Essens.
         Soll in Unterklassen überschrieben werden.
-    """
-    pass
+        """
+        pass
