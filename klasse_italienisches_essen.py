@@ -16,14 +16,14 @@ class Italienisches_Essen:
         extrakaese (bool): Gibt an, ob zusätzlicher Käse hinzugefügt werden soll.
     """
     anzahl = 0
+    scharf = False
+    extrakaese = False
     list_sauce = ["Tomatensauce", "Hollandaisesauce", "Carbonarasauce", "Barbecue", "Creme Fraiche"]
     list_zutat = ["Salami", "Pilze", "Hackfleisch", "Schinken", "Paprika", "Oliven"]
     list_pasta = ["Spaghetti", "Rigatoni", "Penne"]
     default_sauce = list_sauce[0]
     default_zutat = list_zutat[0]
     default_pasta = list_pasta[0]
-    scharf = False
-    extrakaese = False
 
     def __init__(self, anzahl, scharf, extrakaese):
         """

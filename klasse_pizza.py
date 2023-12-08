@@ -5,11 +5,6 @@ from klasse_italienisches_essen import Italienisches_Essen
 class Pizza(Italienisches_Essen):
     """
     Klasse, die eine Pizza darstellt.
-
-    Attribute:
-        pizzaAnzahl (int): Gesamtanzahl der bisher erstellten Pizzas.
-        gueltigeZutaten (list): Liste gültiger Zutaten für die Pizza.
-        gueltigeSaucen (list): Liste gültiger Saucen für die Pizza.
     """
 
     def __init__(self, anzahl, zutat_1=Italienisches_Essen.default_zutat, zutat_2=Italienisches_Essen.default_zutat, zutat_3=Italienisches_Essen.default_zutat, sauce=Italienisches_Essen.default_sauce, scharf=Italienisches_Essen.scharf, extrakaese=Italienisches_Essen.extrakaese):
@@ -19,6 +14,7 @@ class Pizza(Italienisches_Essen):
         Args:
             anzahl (int): Anzahl der Pizzas.
             zutat_1, zutat_2, zutat_3 (str): Zutaten für die Pizza.
+            sauce (str): Sauce für die Pizza.
             scharf (bool): Wahr, wenn die Pizza scharf sein soll.
             extrakaese (bool): Wahr, wenn zusätzlicher Käse gewünscht ist.
         """
@@ -41,25 +37,21 @@ class Pizza(Italienisches_Essen):
 
     def essen_kochen(self):
         """
-        Bereitet die Pizza zu und gibt eine Beschreibung des Vorgangs zurück.
-
-        Returns:
-            str: Beschreibung der Zubereitung der Pizza, einschließlich der verwendeten Zutaten und ob sie scharf oder mit extra Käse zubereitet wird.
+        Bereitet die Pizza zu und speichert die Beschreibung der Zubereitung.
         """
-        zubereitung = f"Pizza wird mit {self.zutat_1}, {self.zutat_2}, {self.zutat_3} belegt."
-        zubereitung += f" Gebacken mit {self.default_sauce}."
+     
+        plural = "Pizzen" if self.anzahl > 1 else "Pizza"
+        extras = []
         if self.scharf:
-            zubereitung += " Zusätzlich scharf gewürzt."
+            extras.append("Zusätzlich scharf gewürzt")
         if self.extrakaese:
-            zubereitung += " Extra Käse hinzugefügt."
-        return zubereitung
+            extras.append("mit extra Käse")
 
+        extras_str = " und ".join(extras)
+        self.zubereitungsdetails = (f"{self.anzahl}x {plural} mit den Zutaten: {self.zutat_1}, {self.zutat_2}, {self.zutat_3}. "
+                                    f"Sauce: {self.default_sauce}. {extras_str}")
     def __str__(self):
         """
-        Gibt eine Beschreibung der Pizza zurück.
-
-        Returns:
-            str: Beschreibung der Pizza, einschließlich Zutaten, Standardsoße und Gesamtanzahl der Pizzas. 
+        Gibt die finale Beschreibung der Pizza zurück, inklusive der Zubereitungsdetails.
         """
-        return f"Pizza mit {self.zutat_1}, {self.zutat_2}, {self.zutat_3}. Sauce: {self.default_sauce}. Scharf: {self.scharf}, Extrakäse: {self.extrakaese}"
-
+        return self.zubereitungsdetails
