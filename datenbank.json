@@ -1,0 +1,32 @@
+{
+	"dict_pasta" : {
+		"Spaghetti": 5,
+		"Rigatoni": 4,
+		"Penne": 5
+	},
+
+	"dict_sauce" : {
+		"Tomatensauce": 1,
+		"Hackfleischsauce": 1,
+		"Carbonarasauce": 1.5,
+		"Barbecuesauce": 1,
+		"CremeFraichesauce": 2
+	},
+
+	"dict_pizza_zutaten" : {
+		"Salami": 1,
+		"Pilze": 1,
+		"Hackfleisch": 1.5,
+		"Schinken": 1,
+		"Paprika": 2,
+		"Oliven": 2
+	},
+
+	"dict_scharf" : {
+		"scharf": 1.5
+	},
+
+	"dict_extrakaese" : {
+		"extrakaese": 2
+	}
+}
