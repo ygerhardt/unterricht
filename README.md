@@ -1,8 +1,3 @@
-Next 2 do://
-Preise für Pizzen & Zutaten erstellen (JSON File)//
-Funktion für den Endpreis einer individuell erstellten Pizza implementieren//
-Vorzeigbar machen vor mittwoch
-
-Next3do://
 Klasse Nudeln auf das Level von Pizza ziehen// 
-Vernünftige, abrufbare Speisekarte erstellen// 
+Vernünftige, abrufbare Speisekarte erstellen(als PDF und/oder jpeg)/Main verschönern// 
+// funktionen der klassen in die main// Anzahl in die Main verfrachten//
