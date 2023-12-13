@@ -9,3 +9,7 @@
 - [ ] Anzahl in die Main verfrachten
 
 - [ ] Erfolgreiche bestellung sound
+
+- [ ] rekursive Funktion mit einbinden
+
+- [ ] pytest zum Testen der Software kennenlernen
