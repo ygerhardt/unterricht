@@ -15,7 +15,7 @@ mittelfristig:
 - [ ] pytest zum Testen der Software kennenlernen
 - [ ] **main Umbau**:
   - Klären was zukünftige Aufgabe von main
-  - Klären wie Anbindung erfolgt (Was ist die Aufgabe von main? (Soll main.py ausschließlich Funktionen ausführen?))
+  - Klären wie Anbindung erfolgt (main soll ausschließlich Funktionen aus anderen Programmen ausführen)
 
 langfristig:
 - siehe Anwendungsfalldiagramm_PizzaGruppenarbeit
