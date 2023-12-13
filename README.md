@@ -13,7 +13,7 @@ mittelfristig:
 - [ ] abrufbare Speisekarte erstellen(als PDF und/oder jpeg/LaTex(?))
 - [ ] rekursive Funktion mit einbinden (Funktion dafür aussuchen)
 - [ ] pytest zum Testen der Software kennenlernen
-- [ ]**main Umbau**:
+- [ ] **main Umbau**:
   - Klären was zukünftige Aufgabe von main
   - Klären wie Anbindung erfolgt (Was ist die Aufgabe von main? (Soll main.py ausschließlich Funktionen ausführen?))
 
