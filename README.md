@@ -7,6 +7,7 @@ kurzfristig:
 - [ ] **main bugfixes**, alle Funktionen sollen von hier aus ausgeführt werden
 - [ ] Funktionen der Klassen in die main
 - [ ] Anzahl in die Main verfrachten (Soll das umgebaut werden?)
+- [ ] **godclass Desserts** herstellen
 - [ ] **class Eis** herstellen
 
 mittelfristig:
