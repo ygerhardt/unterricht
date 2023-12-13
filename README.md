@@ -6,12 +6,13 @@ kurzfristig:
 - [ ] Klasse Nudeln auf das Level von Pizza ziehen
 - [ ] **main bugfixes**, alle Funktionen sollen von hier aus ausgeführt werden
 - [ ] Funktionen der Klassen in die main
-- [ ] Anzahl in die Main verfrachten (Ist das noch relevant?)
+- [ ] Anzahl in die Main verfrachten (Soll das umgebaut werden?)
 - [ ] **class Eis** herstellen
 
 mittelfristig:
 - [ ] abrufbare Speisekarte erstellen(als PDF und/oder jpeg/LaTex(?))
 - [ ] rekursive Funktion mit einbinden (Funktion dafür aussuchen)
+- [ ] Mehrfachvererbung einbauen (ggf. mit **class Eis** -> **class ItalienischesEssen** möglich)
 - [ ] pytest zum Testen der Software kennenlernen
 - [ ] **main Umbau**:
   - Klären was zukünftige Aufgabe von main
