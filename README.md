@@ -1,5 +1,5 @@
 kurzfristig:
-- [ ] Usecase festlegen, niederschreiben (Restaurant, Lieferservice...)
+- [x] Usecase festlegen, niederschreiben (Restaurant, Lieferservice...)
 - [x] Erfolgreiche Bestellung Sound
 - [ ] **class ItalienischesEssen** auf abstrakte Klasse umbauen (in Prg und Klassendiagramm)
 - [ ] Struktur schaffen in Github (.py strukturieren/renamen, Ordner Content, Ordner Datenbanken, ggf. filepathes in Programmen abändern)
