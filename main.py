@@ -1,141 +1,108 @@
 import json
+import os
+import tkinter as Tk
+import pygame
+import sys
+from klasse_pizza import Pizza
+from klasse_pasta import Pasta
+from PIL import Image, ImageTk
 
-with open("data/datenbank.json", "r") as datenbank:
-    datenbank = json.load(datenbank)
+# dateioperationen
+def lade_datenbank():
+    try:
+        with open("data/datenbank.json", "r") as file:
+             return json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError, KeyError) as e:
+        print(f"Fehler beim Laden der Datenbank: {e}")
+        sys.exit("Das Programm wird beendet, da die Datenbank nicht geladen werden kann.")
 
-dict_pizza = {
-    "Sauce": 0,
-    "Zutat 1": 0,
-    "Zutat 2": 0,
-    "Zutat 3": 0,
-    "Extrakäse": 0,
-    "Scharf": 0
+def speichere_bestellung(bestellung, gesamtpreis):
+    try:
+        with open("data/bestellung.json", "r") as file:
+            bestellungen = json.load(file)
+    except FileNotFoundError:
+        bestellungen = []
+    except json.JSONDecodeError:
+        print("Warnung: Die Bestellungsdatei ist beschädigt und wird überschrieben.")
+        bestellungen = []
 
-}
+    bestellungen.append({"Bestellung": bestellung, "Gesamtpreis": gesamtpreis})
 
-def pizza_sauce():
-    print("Welche Sauce darf es sein ?")
-    print(datenbank['dict_sauce'])
-    input_sauce = input()
-    if input_sauce == str(1) or input_sauce == "Tomatensauce":
-        dict_pizza.update({"Sauce": "Tomatensauce"})
-        pizza_z1()
-    elif input_sauce == str(2) or input_sauce == "Hackfleischsauce":
-        dict_pizza.update({"Sauce": "Hackfleischsauce"})
-        pizza_z1()
-    elif input_sauce == str(3) or input_sauce == "Carbonarasauce":
-        dict_pizza.update({"Sauce": "Carbonarasauce"})
-        pizza_z1()
-    elif input_sauce == str(4) or input_sauce == "Barbecuesauce":
-        dict_pizza.update({"Sauce": "Barbecuesauce"})
-        pizza_z1()
-    elif input_sauce == str(5) or input_sauce == "CremeFraichesauce":
-        dict_pizza.update({"Sauce": "CremeFraichesauce"})
-    else:
-        print(" Bitte gib eine Zahl von 1 bis 5 ein")
-        pizza_sauce()
-        pass
+    try:
+        with open("data/bestellung.json", "w") as file:
+            json.dump(bestellungen, file, ensure_ascii=False, indent=4)
+    except IOError as e:
+        print(f"Fehler beim Schreiben der Bestellungsdatei: {e}")
+        sys.exit("Das Programm wird beendet.")
 
-def pizza_z1():
-    print("Was soll die erste Zutat sein?")
-    print(datenbank['dict_pizza_zutaten'])
-    input_z1 = input()
-    if input_z1 == str(1) or input_z1 == "Salami":
-        dict_pizza.update({"Zutat 1": "Salami"})
-        pizza_z2()
-    elif input_z1 == str(2) or input_z1 == "Pilze":
-        dict_pizza.update({"Zutat 1": "Pilze"})
-        pizza_z2()
-    elif input_z1 == str(3) or input_z1 == "Hackfleisch":
-        dict_pizza.update({"Zutat 1": "Hackfleisch"})
-        pizza_z2()
-    elif input_z1 == str(4) or input_z1 == "Schinken":
-        dict_pizza.update({"Zutat 1": "Schinken"})
-        pizza_z2()
-    elif input_z1 == str(5) or input_z1 == "Paprika":
-        dict_pizza.update({"Zutat 1": "Paprika"})
-        pizza_z2()
-    elif input_z1 == str(6) or input_z1 == "Oliven":
-        dict_pizza.update({"Zutat 1": "Oliven"})
-        pizza_z2()
-    else:
-        print(" Bitte gib eine Zahl von 1 bis 6 ein")
-        pizza_z1()
-        pass
+# bild und sound
+def zeige_bild():
+    root = Tk.Tk()
+    root.title("Bildanzeige für das gewählte Gericht")
+    root.attributes("-topmost", True)
 
+    img = Image.open("data/bilder/nudeln_spaghetti.jpg")
+    tk_img = ImageTk.PhotoImage(img)
+    label = Tk.Label(root, image=tk_img)
+    label.pack()
 
-def pizza_z2():
-    print("Was soll die zweite Zutat sein?")
-    print(datenbank['dict_pizza_zutaten'])
-    input_z1 = input()
-    if input_z1 == str(1) or input_z1 == "Salami":
-        dict_pizza.update({"Zutat 2": "Salami"})
-        pizza_z3()
-    elif input_z1 == str(2) or input_z1 == "Pilze":
-        dict_pizza.update({"Zutat 2": "Pilze"})
-        pizza_z3()
-    elif input_z1 == str(3) or input_z1 == "Hackfleisch":
-        dict_pizza.update({"Zutat 2": "Hackfleisch"})
-        pizza_z3()
-    elif input_z1 == str(4) or input_z1 == "Schinken":
-        dict_pizza.update({"Zutat 2": "Schinken"})
-        pizza_z3()
-    elif input_z1 == str(5) or input_z1 == "Paprika":
-        dict_pizza.update({"Zutat 2": "Paprika"})
-        pizza_z3()
-    elif input_z1 == str(6) or input_z1 == "Oliven":
-        dict_pizza.update({"Zutat 2": "Oliven"})
-        pizza_z3()
-    else:
-        print(" Bitte gib eine Zahl von 1 bis 6 ein")
-        pizza_z2()
+    continue_button = Tk.Button(root, text="Weiter", command=root.destroy)
+    continue_button.pack()
 
+    root.mainloop()
 
-def pizza_z3():
-    print("Was soll die dritte Zutat sein?")
-    print(datenbank['dict_pizza_zutaten'])
-    input_z1 = input()
-    if input_z1 == str(1) or input_z1 == "Salami":
-        dict_pizza.update({"Zutat 3": "Salami"})
-        print(dict_pizza)
+def spiele_sound():
+    pygame.mixer.init()
+    pygame.mixer.music.load("data/sounds/sound_microwave_ding.mp3")
+    pygame.mixer.music.play()
+    while pygame.mixer.music.get_busy():
+        pygame.time.delay(100)
 
-    elif input_z1 == str(2) or input_z1 == "Pilze":
-        dict_pizza.update({"Zutat 3": "Pilze"})
-        print(dict_pizza)
+# preisberechnung und verarbeitung
+def zeige_bestellung_und_preis(gericht):
+    print("\nIhre Bestellung:", gericht.zubereitungsdetails)
+    preis = sum(gericht.zutaten.values())
+    print(f"Preis: {preis:.2f}\u20AC")
+    return preis
 
-    elif input_z1 == str(3) or input_z1 == "Hackfleisch":
-        dict_pizza.update({"Zutat 3": "Hackfleisch"})
-        print(dict_pizza)
+def verarbeite_bestellung(gericht, datenbank):
+    zeige_bild()
+    bestellung = gericht(datenbank)
+    auswahl = bestellung.waehle_groesse() if isinstance(bestellung, Pizza) else bestellung.waehle_sorte()
+    bestell_details = bestellung.erfasse_bestellung(auswahl)
+    preis = zeige_bestellung_und_preis(bestellung)
+    speichere_bestellung(bestell_details, preis)
+    return preis
 
-    elif input_z1 == str(4) or input_z1 == "Schinken":
-        dict_pizza.update({"Zutat 3": "Schinken"})
-        print(dict_pizza)
+def main():
+    datenbank = lade_datenbank()
+    gesamtpreis = 0
 
-    elif input_z1 == str(5) or input_z1 == "Paprika":
-        dict_pizza.update({"Zutat 3": "Paprika"})
-        print(dict_pizza)
+    while True:
+        auswahl = input("Willkommen im Restaurant 'FIAE A'. Was möchten Sie bestellen? (01: Pizza, 02: Pasta): ")
+        print()
+        if auswahl == "01":
+            gesamtpreis += verarbeite_bestellung(Pizza, datenbank)
+        elif auswahl == "02":
+            gesamtpreis += verarbeite_bestellung(Pasta, datenbank)
+        else:
+            print("Ungültige Auswahl. Bitte wählen Sie '01' für Pizza oder '02' für Pasta.\n")
+            continue
 
-    elif input_z1 == str(6) or input_z1 == "Oliven":
-        dict_pizza.update({"Zutat 3": "Oliven"})
-        print(dict_pizza)
+        fortsetzen = input("\nDarf es noch etwas sein? (ja/nein): ").lower()
+        if fortsetzen == 'ja':
+            print()
+            continue
+        else:
+            spiele_sound()
+            break
 
-    else:
-        print(" Bitte gib eine Zahl von 1 bis 6 ein")
-        pizza_z3()
+    print(f"\nVielen Dank für Ihre Bestellung! Bitte bezahlen Sie {gesamtpreis:.2f}€.")
+
+    if os.path.exists("data/bestellung.json"):
+        os.remove("data/bestellung.json")
+
+if __name__ == "__main__":
+    main()
 
 
-print("willkommen im Restaurant 'FIAE A'. Wir bieten Pizza und Pasta an. Was möchten Sie bestellen ?")
-print("1 = Pizza; 2 = Pasta")
-input_gericht = input(str())
-
-
-if input_gericht == "1" or input_gericht == "Pizza":
-    print("Pizza, gute Wahl.")
-    pizza_sauce()
-
-
-
-
-
-if input_gericht == "2" or input_gericht == "Pasta":
-    print("Pasta gute Wahl")

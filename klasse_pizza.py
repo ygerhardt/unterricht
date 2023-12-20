@@ -1,57 +1,42 @@
-# klasse_pizza.py
-
-from klasse_italienisches_essen import Italienisches_Essen
+from oberklasse_italienisches_essen import Italienisches_Essen
 
 class Pizza(Italienisches_Essen):
     """
     Klasse, die eine Pizza darstellt.
+    Diese Klasse erbt von Italienisches_Essen und implementiert die spezifischen Eigenschaften einer Pizza.
     """
 
-    def __init__(self, anzahl, zutat_1=Italienisches_Essen.default_zutat, zutat_2=Italienisches_Essen.default_zutat, zutat_3=Italienisches_Essen.default_zutat, sauce=Italienisches_Essen.default_sauce, scharf=Italienisches_Essen.scharf, extrakaese=Italienisches_Essen.extrakaese):
+    def __init__(self, datenbank):
         """
-        Konstruktor der Klasse Pizza.
+        Initialisiert eine Pizza mit einer Datenbank.
 
         Args:
-            anzahl (int): Anzahl der Pizzas.
-            zutat_1, zutat_2, zutat_3 (str): Zutaten für die Pizza.
-            sauce (str): Sauce für die Pizza.
-            scharf (bool): Wahr, wenn die Pizza scharf sein soll.
-            extrakaese (bool): Wahr, wenn zusätzlicher Käse gewünscht ist.
+            datenbank (dict): Eine Datenbank mit Zutaten und ihren Preisen.
         """
-        super().__init__(anzahl, scharf, extrakaese)
-        self.zutat_1 = zutat_1
-        self.zutat_2 = zutat_2
-        self.zutat_3 = zutat_3
-        self.default_sauce = sauce
+        super().__init__(datenbank)
 
-    def pizza_belegen(self, z_1, z_2, z_3):
+    def waehle_groesse(self):
         """
-        Ändert die Zutaten der Pizza.
+        Ermöglicht dem Benutzer die Auswahl der Größe der Pizza.
+
+        Diese Methode ruft die erfasse_optionen-Methode der Oberklasse auf, 
+        um aus verschiedenen Pizzagrößen zu wählen, die in der Datenbank definiert sind.
+
+        Returns:
+            dict: Die vom Benutzer ausgewählte Pizzagröße und ihr Preis.
+        """
+        return self.erfasse_optionen(self.datenbank['dict_pizza_groesse'])
+
+    def essen_kochen(self, zutaten):
+        """
+        Stellt die Pizza zusammen, indem die ausgewählten Zutaten verarbeitet werden.
+        Die erste Zutat wird als die gewählte Pizzagröße betrachtet. Die weiteren Zutaten
+        werden zur Liste der Zutaten hinzugefügt, und die Zubereitungsdetails werden entsprechend aktualisiert.
 
         Args:
-            z_1, z_2, z_3 (str): Die neuen Zutaten für die Pizza.
+            zutaten (dict): Ein Dictionary ausgewählter Zutaten für die Pizza mit ihren jeweiligen Preisen.
+                            Die erste Zutat wird als die gewählte Pizza-Größe betrachtet.
         """
-        self.zutat_1 = z_1
-        self.zutat_2 = z_2
-        self.zutat_3 = z_3
-
-    def essen_kochen(self):
-        """
-        Bereitet die Pizza zu und speichert die Beschreibung der Zubereitung.
-        """
-     
-        plural = "Pizzen" if self.anzahl > 1 else "Pizza"
-        extras = []
-        if self.scharf:
-            extras.append("Zusätzlich scharf gewürzt")
-        if self.extrakaese:
-            extras.append("mit extra Käse")
-
-        extras_str = " und ".join(extras)
-        self.zubereitungsdetails = (f"{self.anzahl}x {plural} mit den Zutaten: {self.zutat_1}, {self.zutat_2}, {self.zutat_3}. "
-                                    f"Sauce: {self.default_sauce}. {extras_str}")
-    def __str__(self):
-        """
-        Gibt die finale Beschreibung der Pizza zurück, inklusive der Zubereitungsdetails.
-        """
-        return self.zubereitungsdetails
+        self.zutaten = zutaten
+        pizza_groesse = next(iter(zutaten.keys()))
+        self.zubereitungsdetails = f"Pizza ({pizza_groesse}) mit " + ', '.join(list(zutaten.keys())[1:])
