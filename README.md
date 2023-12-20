@@ -1,11 +1,11 @@
 kurzfristig:
 - [x] Usecase festlegen, niederschreiben (Restaurant, Lieferservice...)
 - [x] Erfolgreiche Bestellung Sound
-- [ ] **class ItalienischesEssen** auf abstrakte Klasse umbauen (in Prg und Klassendiagramm)
+- [x] **class ItalienischesEssen** auf abstrakte Klasse umbauen (in Prg und Klassendiagramm)
 - [ ] Struktur schaffen in Github (.py strukturieren/renamen, Ordner Content, Ordner Datenbanken, ggf. filepathes in Programmen abändern)
 - [x] Klasse Pasta auf das Level von Pizza ziehen
-- [ ] **main bugfixes**, alle Funktionen sollen von hier aus ausgeführt werden
-- [ ] Funktionen der Klassen in die main
+- [x] **main bugfixes**, alle Funktionen sollen von hier aus ausgeführt werden
+- [x] Funktionen der Klassen in die main
 - [ ] Anzahl in die Main verfrachten (Soll das umgebaut werden?)
 - [ ] **godclass Desserts** herstellen
 - [ ] **class Eis** herstellen
