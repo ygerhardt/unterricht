@@ -21,3 +21,6 @@ mittelfristig:
 
 langfristig:
 - siehe Anwendungsfalldiagramm_PizzaGruppenarbeit
+
+Permanent: 
+- Diagramme aktualisieren
