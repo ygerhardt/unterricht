@@ -1,7 +1,7 @@
 **Projektende: 31.01.2024 !!**
 - kurzfristig:
 - [ ] Usecase sauber aufschreiben Thema Lieferdienst
-- [ ] Readme ausbauen mit konkreten Zeiten, Prio, Aufgabenverteilung
+- [ ] Readme ausbauen mit konkreten Zeiten, Prio, Aufgabenverteilung, Testen
 - [x] Erfolgreiche Bestellung Sound
 - [x] **class ItalienischesEssen** auf abstrakte Klasse umbauen (in Prg und Klassendiagramm)
 - [ ] Struktur schaffen in Github (.py strukturieren/renamen, Ordner Content, Ordner Datenbanken, ggf. filepathes in Programmen abändern)
