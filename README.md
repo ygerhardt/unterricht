@@ -9,6 +9,7 @@ kurzfristig:
 - [ ] Anzahl in die Main verfrachten (Soll das umgebaut werden?)
 - [ ] **godclass Desserts** herstellen
 - [ ] **class Eis** herstellen
+- [ ] Passende Bilder zu Gerichten heraussuchen (Stock)
 
 mittelfristig:
 - [ ] abrufbare Speisekarte erstellen(als PDF und/oder jpeg/LaTex(?))
