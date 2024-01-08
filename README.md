@@ -1,3 +1,4 @@
+**Projektende: 31.01.2024 !!**
 kurzfristig:
 - [x] Usecase festlegen, niederschreiben (Restaurant, Lieferservice...)
 - [x] Erfolgreiche Bestellung Sound
