@@ -1,5 +1,6 @@
 **Projektende: 31.01.2024 !!**
 - kurzfristig:
+- [ ] Rekursive Funktionen für Bestellung einrichten - Nikolas
 - [ ] Klassendiagramm aktualisieren - Andreas
 - [ ] BusinessCase sauber aufschreiben Thema Lieferdienst - Nikolas
 - [ ] Readme ausbauen mit konkreten Zeiten, Prio, Aufgabenverteilung, Testen
