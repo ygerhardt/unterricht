@@ -89,7 +89,7 @@ def main():
             spiele_sound()
             break
 
-    print(f"\nVielen Dank für Ihre Bestellung! Bitte bezahlen Sie {gesamtpreis:.2f}€.")
+    print(f"\nVielen Dank für Ihre Bestellung! Bitte bezahlen Sie {gesamtpreis:.2f}\u20AC.")
 
     if os.path.exists("data/bestellung.json"):
         os.remove("data/bestellung.json")
