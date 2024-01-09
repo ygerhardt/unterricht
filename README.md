@@ -1,5 +1,7 @@
-kurzfristig:
-- [x] Usecase festlegen, niederschreiben (Restaurant, Lieferservice...)
+**Projektende: 31.01.2024 !!**
+- kurzfristig:
+- [ ] BusinessCase sauber aufschreiben Thema Lieferdienst
+- [ ] Readme ausbauen mit konkreten Zeiten, Prio, Aufgabenverteilung, Testen
 - [x] Erfolgreiche Bestellung Sound
 - [x] **class ItalienischesEssen** auf abstrakte Klasse umbauen (in Prg und Klassendiagramm)
 - [ ] Struktur schaffen in Github (.py strukturieren/renamen, Ordner Content, Ordner Datenbanken, ggf. filepathes in Programmen abändern)
@@ -9,8 +11,9 @@ kurzfristig:
 - [ ] Anzahl in die Main verfrachten (Soll das umgebaut werden?)
 - [ ] **godclass Desserts** herstellen
 - [ ] **class Eis** herstellen
+- [ ] Passende Bilder zu Gerichten heraussuchen (Stock)
 
-mittelfristig:
+- mittelfristig:
 - [ ] abrufbare Speisekarte erstellen(als PDF und/oder jpeg/LaTex(?))
 - [ ] rekursive Funktion mit einbinden (Funktion dafür aussuchen)
 - [ ] Mehrfachvererbung einbauen (ggf. mit **class Eis** -> **class ItalienischesEssen** möglich)
@@ -19,7 +22,7 @@ mittelfristig:
   - Klären was zukünftige Aufgabe von main
   - Klären wie Anbindung erfolgt (main soll ausschließlich Funktionen aus anderen Programmen ausführen)
 
-langfristig:
+- langfristig:
 - siehe Anwendungsfalldiagramm_PizzaGruppenarbeit
 
 Permanent: 
