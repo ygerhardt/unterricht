@@ -1,6 +1,7 @@
 **Projektende: 31.01.2024 !!**
 - kurzfristig:
-- [ ] BusinessCase sauber aufschreiben Thema Lieferdienst
+- [ ] Klassendiagramm aktualisieren - Andreas
+- [ ] BusinessCase sauber aufschreiben Thema Lieferdienst - Nikolas
 - [ ] Readme ausbauen mit konkreten Zeiten, Prio, Aufgabenverteilung, Testen
 - [x] Erfolgreiche Bestellung Sound
 - [x] **class ItalienischesEssen** auf abstrakte Klasse umbauen (in Prg und Klassendiagramm)
@@ -9,9 +10,9 @@
 - [x] **main bugfixes**, alle Funktionen sollen von hier aus ausgeführt werden
 - [x] Funktionen der Klassen in die main
 - [ ] Anzahl in die Main verfrachten (Soll das umgebaut werden?)
-- [ ] **godclass Desserts** herstellen
-- [ ] **class Eis** herstellen
-- [ ] Passende Bilder zu Gerichten heraussuchen (Stock)
+- [ ] **godclass Desserts** herstellen - Yasha
+- [ ] **class Eis** herstellen - Yasha
+- [ ] Passende Bilder zu Gerichten heraussuchen (Stock) - Andreas
 
 - mittelfristig:
 - [ ] abrufbare Speisekarte erstellen(als PDF und/oder jpeg/LaTex(?))
