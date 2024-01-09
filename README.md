@@ -1,5 +1,5 @@
 **Projektende: 31.01.2024 !!**
-- kurzfristig:
+- kurzfristig (Ende der Woche 8.01 - 12.01) :
 - [ ] Bilder - Amjad
 - [ ] Rekursive Funktionen für Bestellung einrichten - Nikolas
 - [ ] Klassendiagramm aktualisieren - Andreas
