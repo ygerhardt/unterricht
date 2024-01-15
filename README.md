@@ -10,6 +10,7 @@
 - [ ] **godclass Desserts** herstellen - Yasha
 - [ ] **class Eis** herstellen - Yasha
 - [ ] Passende Bilder zu Gerichten mit KI einbauen - Andreas
+- [ ] Projekt Doku neu (Aufgabe, Start, Ende, Prio, Verantwortung, Aktualisierungsstand, Fertigstellung in %) - Andreas
 
 - mittelfristig:
 - [ ] abrufbare Speisekarte erstellen(als PDF und/oder jpeg/LaTex(?))
