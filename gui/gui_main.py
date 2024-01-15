@@ -9,11 +9,11 @@ main_window.title("Papa Python Ristorante")
 set_appearance_mode("dark")
 
 #Images
-logo_image = CTkImage(light_image=Image.open("Papa python logo.png"),
-                      dark_image=Image.open("Papa python logo.png"),
+logo_image = CTkImage(light_image=Image.open("gui\Papa python logo.png"),
+                      dark_image=Image.open("gui\Papa python logo.png"),
                       size=(180,180))
 
-menu_image= CTkImage(Image.open("menu.png"), size=(20,20))
+menu_image= CTkImage(Image.open("gui\menu.png"), size=(20,20))
 
 
 #Frames within the main_window that are on the left side in the app
