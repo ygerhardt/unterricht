@@ -42,7 +42,7 @@ class Italienisches_Essen(ABC):
         ausgewaehlteOptionen = {}
 
         for key, value in verfuegbareOptionen.items():
-            print(f"{key}: {value['Beschreibung']} (Preis: {value['Preis']:.2f}€)")
+            print(f"{key}: {value['Beschreibung']} (Preis: {value['Preis']:.2f}\u20AC)")
 
         eingabe = input("\nBitte wählen Sie eine oder mehrere Optionen (z.B. 01,03,05): " if mehrfachauswahl else "\nBitte wählen Sie eine Option (Nummer): ").split(',')
 

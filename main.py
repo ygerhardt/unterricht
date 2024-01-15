@@ -15,17 +15,9 @@ def lade_datenbank():
     except (FileNotFoundError, json.JSONDecodeError, KeyError) as e:
         print(f"Fehler beim Laden der Datenbank: {e}")
         sys.exit("Das Programm wird beendet, da die Datenbank nicht geladen werden kann.")
-
+        
 def speichere_bestellung(bestellung, gesamtpreis):
-    try:
-        with open("data/bestellung.json", "r") as file:
-            bestellungen = json.load(file)
-    except FileNotFoundError:
-        bestellungen = []
-    except json.JSONDecodeError:
-        print("Warnung: Die Bestellungsdatei ist beschädigt und wird überschrieben.")
-        bestellungen = []
-
+    bestellungen = []
     bestellungen.append({"Bestellung": bestellung, "Gesamtpreis": gesamtpreis})
 
     try:
@@ -62,7 +54,7 @@ def spiele_sound():
 def zeige_bestellung_und_preis(gericht):
     print("\nIhre Bestellung:", gericht.zubereitungsdetails)
     preis = sum(gericht.zutaten.values())
-    print(f"Preis: {preis:.2f}\u20AC")
+    print(f"Preis: {preis:.2f}\u20AC") # \u20AC = €
     return preis
 
 def verarbeite_bestellung(gericht, datenbank):
@@ -97,7 +89,7 @@ def main():
             spiele_sound()
             break
 
-    print(f"\nVielen Dank für Ihre Bestellung! Bitte bezahlen Sie {gesamtpreis:.2f}€.")
+    print(f"\nVielen Dank für Ihre Bestellung! Bitte bezahlen Sie {gesamtpreis:.2f}\u20AC.")
 
     if os.path.exists("data/bestellung.json"):
         os.remove("data/bestellung.json")
