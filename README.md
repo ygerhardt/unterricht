@@ -9,7 +9,7 @@
 - [ ] Anzahl in die Main verfrachten (Soll das umgebaut werden?)
 - [ ] **godclass Desserts** herstellen - Yasha
 - [ ] **class Eis** herstellen - Yasha
-- [ ] Passende Bilder zu Gerichten heraussuchen (Stock) - Andreas
+- [ ] Passende Bilder zu Gerichten mit KI einbauen - Andreas
 
 - mittelfristig:
 - [ ] abrufbare Speisekarte erstellen(als PDF und/oder jpeg/LaTex(?))
