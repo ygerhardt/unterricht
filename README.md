@@ -15,7 +15,7 @@ Rep ist public, Datenschutz beachten.
 |	10	|		|	GUI auf das Programm anwendbar machen	|	Lily	|	Implementierung in main besprechen	|	25.12.2023	|	18.01.2024	|		|
 |	11	|	x	|	abrufbare Speisekarte erstellen(als PDF und/oder jpeg/LaTex(?))	|	Amjad	|		|		|		|		|
 |	12	|		|	Mehrfachvererbung einbauen (ggf. mit class Eis -> class ItalienischesEssen möglich)	|		|		|		|		|		|
-|	13	|		|	pytest zum Testen der Software kennenlernen	|		|	Testzenarien besprechen	|		|		|		|
+|	13	|		|	pytest zum Testen der Software kennenlernen	|		|	Testszenarien besprechen	|		|		|		|
 |	14	|		|		|		|		|		|		|		|
 
 
