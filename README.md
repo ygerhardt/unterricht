@@ -1,3 +1,5 @@
+Rep ist public, Datenschutz beachten.
+
 |	Tasknr.	|		|	Aufgabe	|	Team	|	Abhängigkeiten	|	Startdatum	|	Enddatum	|	Prio	|
 |	---	|	---	|	---	|	---	|	---	|	---	|	---	|	---	|
 |		|	x = erledigt	|		|	"leer" = frei	|		|		|		|		|
