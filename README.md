@@ -16,7 +16,7 @@ Rep ist public, Datenschutz beachten.
 |	11	|	x	|	abrufbare Speisekarte erstellen(als PDF und/oder jpeg/LaTex(?))	|	Amjad	|		|		|		|		|
 |	12	|		|	Mehrfachvererbung einbauen (ggf. mit class Eis -> class ItalienischesEssen möglich)	|		|		|		|		|		|
 |	13	|		|	pytest zum Testen der Software kennenlernen	|		|	Testszenarien besprechen	|		|		|		|
-|	14	|		|		|		|		|		|		|		|
+|	14	|		|	Vorstellungen Random machen	|		|		|		|		|		|
 
 
 
