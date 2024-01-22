@@ -9,7 +9,7 @@
 |	5	|	x	|	Anzahl in die Main verfrachten (Soll das umgebaut werden?)	|		|		|		|		|		|
 |	6	|		|	godclass Desserts herstellen	|	Yasha	|		|	25.12.2023	|	29.01.2024	|		|
 |	7	|		|	class Eis herstellen	|	Yasha	|		|	25.12.2023	|	18.01.2024	|		|
-|	8	|		|	Passende Bilder zu Gerichten mit KI einbauen	|	Andreas	|	Integration mit Lucas besprechen	|	15.01.2024	|	29.01.2024	|		|
+|	8	|		|	Passende Bilder zu Gerichten einbauen	|	Andreas	|	Integration mit Lucas besprechen	|	15.01.2024	|	29.01.2024	|		|
 |	9	|		|	Projekt Doku neu (Aufgabe, Start, Ende, Prio, Verantwortung, Aktualisierungsstand, Fertigstellung in %)	|	Andreas	|		|	25.12.2023	|	29.01.2024	|		|
 |	10	|		|	GUI auf das Programm anwendbar machen	|	Lily	|	Implementierung in main besprechen	|	25.12.2023	|	29.01.2024	|		|
 |	11	|	x	|	abrufbare Speisekarte erstellen(als PDF und/oder jpeg/LaTex(?))	|	Amjad	|		|		|		|		|
