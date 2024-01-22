@@ -27,6 +27,14 @@ class Italienisches_Essen(ABC):
         """
         pass
 
+    @abstractmethod
+    def waehle_option(self):
+        """
+        Abstrakte Methode zur Auswahl einer Option für das Gericht um mehrere Optionen zu unterstützen 
+        die in der main nicht extra spezifiziert werden müssen. Muss in jeder Unterklasse implementiert werden.
+        """
+        pass
+
     def erfasse_optionen(self, verfuegbareOptionen):
         """
         Erlaubt dem Benutzer, Optionen aus einem Dictionary von Optionen zu wählen.

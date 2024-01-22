@@ -60,7 +60,7 @@ def zeige_bestellung_und_preis(gericht):
 def verarbeite_bestellung(gericht, datenbank):
     zeige_bild()
     bestellung = gericht(datenbank)
-    auswahl = bestellung.waehle_groesse() if isinstance(bestellung, Pizza) else bestellung.waehle_sorte()
+    auswahl = bestellung.waehle_option()
     bestell_details = bestellung.erfasse_bestellung(auswahl)
     preis = zeige_bestellung_und_preis(bestellung)
     speichere_bestellung(bestell_details, preis)

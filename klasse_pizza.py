@@ -15,15 +15,9 @@ class Pizza(Italienisches_Essen):
         """
         super().__init__(datenbank)
 
-    def waehle_groesse(self):
+    def waehle_option(self):
         """
         Ermöglicht dem Benutzer die Auswahl der Größe der Pizza.
-
-        Diese Methode ruft die erfasse_optionen-Methode der Oberklasse auf, 
-        um aus verschiedenen Pizzagrößen zu wählen, die in der Datenbank definiert sind.
-
-        Returns:
-            dict: Die vom Benutzer ausgewählte Pizzagröße und ihr Preis.
         """
         return self.erfasse_optionen(self.datenbank['dict_pizza_groesse'])
 
