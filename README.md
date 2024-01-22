@@ -5,7 +5,7 @@ Rep ist public, Datenschutz beachten.
 |		|	x = erledigt	|		|	"leer" = frei	|		|		|		|		|
 |	1	|		|	Bilder	|	Amjad	|		|		|	18.01.2024	|		|
 |	2	|		|	Rekursive Funktionen für Bestellung einrichten	|	Nikolas	|		|	01.01.2024	|	18.01.2024	|		|
-|	3	|	x	|	Readme ausbauen mit konkreten Zeiten, Prio, Aufgabenverteilung, Testen	|	Andreas	|		|		|	18.01.2024	|		|
+|	3	|	x	|	 Klassendiagramm aktualisieren |	Andreas	|		|		|	18.01.2024	|		|
 |	4	|	x	|	Struktur schaffen in Github (.py strukturieren/renamen, Ordner Content, Ordner Datenbanken, ggf. filepathes in Programmen abändern)	|	Yasha	|		|		|	18.01.2024	|		|
 |	5	|	x	|	Anzahl in die Main verfrachten (Soll das umgebaut werden?)	|		|		|		|		|		|
 |	6	|		|	godclass Desserts herstellen	|	Yasha	|		|	25.12.2023	|	18.01.2024	|		|
