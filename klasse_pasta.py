@@ -15,17 +15,11 @@ class Pasta(Italienisches_Essen):
         """
         super().__init__(datenbank)
 
-    def waehle_sorte(self):
+    def waehle_option(self):
         """
         Ermöglicht dem Benutzer die Auswahl der Pastasorte.
-
-        Diese Methode ruft die erfasse_optionen-Methode der Oberklasse auf, 
-        um aus verschiedenen Pastasorten zu wählen, die in der Datenbank definiert sind.
-
-        Returns:
-            dict: Die vom Benutzer ausgewählte Pastasorte und ihr Preis.
         """
-        return self.erfasse_optionen(self.datenbank['dict_pasta_sorte']) 
+        return self.erfasse_optionen(self.datenbank['dict_pasta_sorte'])
 
     def essen_kochen(self, zutaten):
         """
