@@ -15,7 +15,7 @@
 |	11	|	x	|	abrufbare Speisekarte erstellen(als PDF und/oder jpeg/LaTex(?))	|	Amjad	|		|		|		|		|
 |	12	|		|	Mehrfachvererbung einbauen (ggf. mit class Eis -> class ItalienischesEssen möglich)	|		|		|		|		|		|
 |	13	|		|	pytest zum Testen der Software kennenlernen	|		|	Testszenarien besprechen	|		|		|		|
-|	14	|		|	Vorstellung planen |		|		bis 30.01.24 um einen Tag Puffer zu haben|		22.01.2024|		30.01.24|		|
+|	14	|		|	Vorstellung planen |		|		bis 30.01.24 um einen Tag Puffer zu haben|		22.01.2024|		30.01.24|		!|
 
 
 
