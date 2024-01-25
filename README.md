@@ -4,7 +4,7 @@
 |		|	x = erledigt	|		|	"leer" = frei	|		|		|		|		|
 |	1	|		|	Bilder	|	Amjad	|		|		|	29.01.2024	|		|
 |	2	|		|	Rekursive Funktionen für Bestellung einrichten	|	Nikolas	|		|	01.01.2024	|	29.01.2024	|		|
-|	3	|		|	 Klassendiagramm aktualisieren |	Andreas	|		warten bis Klassen fertig|		|	29.01.2024	|		|
+|	3	|		|	 alle Diagramme aktualisieren |	Andreas	|		warten bis Klassen fertig|		|	29.01.2024	|		|
 |	4	|	x	|	Struktur schaffen in Github (.py strukturieren/renamen, Ordner Content, Ordner Datenbanken, ggf. filepathes in Programmen abändern)	|	Yasha	|		|		|	29.01.2024	|		|
 |	5	|	x	|	Anzahl in die Main verfrachten (Soll das umgebaut werden?)	|		|		|		|		|		|
 |	6	|		|	godclass Desserts herstellen	|	Yasha	|		|	25.12.2023	|	29.01.2024	|		|
