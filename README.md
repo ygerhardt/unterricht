@@ -2,7 +2,7 @@
 |	Tasknr.	|		|	Aufgabe	|	Team	|	Abhängigkeiten	|	Startdatum	|	Enddatum	|	Prio	|
 |	---	|	---	|	---	|	---	|	---	|	---	|	---	|	---	|
 |		|	x = erledigt	|		|	"leer" = frei	|		|		|		|		|
-|	1	|		|	Bilder	|	Amjad	|		|		|	29.01.2024	|		|
+|	1	|	x	|	Bilder	|	Amjad	|		|		|	29.01.2024	|		|
 |	2	|		|	Rekursive Funktionen für Bestellung einrichten	|	Nikolas	|		|	01.01.2024	|	29.01.2024	|		|
 |	3	|		|	 alle Diagramme aktualisieren |	Andreas	|		warten bis Klassen fertig|		|	29.01.2024	|		|
 |	4	|	x	|	Struktur schaffen in Github (.py strukturieren/renamen, Ordner Content, Ordner Datenbanken, ggf. filepathes in Programmen abändern)	|	Yasha	|		|		|	29.01.2024	|		|
