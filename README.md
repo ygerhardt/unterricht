@@ -10,7 +10,7 @@
 |	6	|		|	godclass Desserts herstellen	|	Yasha	|		|	25.12.2023	|	29.01.2024	|		|
 |	7	|		|	class Eis herstellen	|	Yasha	|		|	25.12.2023	|	18.01.2024	|		|
 |	8	|	x|	Passende Bilder zu Gerichten einbauen	|	Andreas	|	von Lilly übernommen im Zuge GUI	|	15.01.2024	|	29.01.2024	|		|
-|	9	|	x	|	Projekt Doku neu (Aufgabe, Start, Ende, Prio, Verantwortung, Aktualisierungsstand, Fertigstellung in %)	|	Andreas	|		|	25.12.2023	|	29.01.2024	|		|
+|	9	|	x	|	Projekt Doku neu (Aufgabe, Start, Ende, Prio, Verantwortung, Aktualisierungsstand, Fertigstellung in %)	|	Andreas	|		|	25.12.2023	|	18.01.2024	|		|
 |	10	|		|	GUI auf das Programm anwendbar machen	|	Lily	|	Implementierung in main besprechen	|	25.12.2023	|	29.01.2024	|		|
 |	11	|	x	|	abrufbare Speisekarte erstellen(als PDF und/oder jpeg/LaTex(?))	|	Amjad	|		|		|		|		|
 |	12	|		|	Mehrfachvererbung einbauen (ggf. mit class Eis -> class ItalienischesEssen möglich)	|		|		|		|		|		|
