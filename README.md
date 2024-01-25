@@ -14,7 +14,7 @@
 |	10	|		|	GUI auf das Programm anwendbar machen	|	Lily	|	Implementierung in main besprechen	|	25.12.2023	|	29.01.2024	|		|
 |	11	|	x	|	abrufbare Speisekarte erstellen(als PDF und/oder jpeg/LaTex(?))	|	Amjad	|		|		|		|		|
 |	12	|		|	Mehrfachvererbung einbauen (ggf. mit class Eis -> class ItalienischesEssen möglich)	|		|		|		|		|		|
-|	13	|		|	pytest zum Testen der Software kennenlernen	|	Lukas	|	Testszenarien besprechen	|		|		|		|
+|	13	|		|	pytest zum Testen der Software kennenlernen	|	Lukas	|	Testszenarien besprechen	|	23.01.2024	|		|		|
 |	14	|		|	Vorstellung planen |		|		bis 30.01.24 um einen Tag Puffer zu haben|		22.01.2024|		30.01.24|		!|
 |	15	|		|	UseCase |		|		|		|		30.01.24|		!!|
 
