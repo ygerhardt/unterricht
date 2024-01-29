@@ -17,7 +17,7 @@
 |	13	|		|	pytest zum Testen der Software kennenlernen	|	Lukas	|	Testszenarien besprechen	|	23.01.2024	|	29.01.2024	|		|
 |	14	|		|	Vorstellung planen |		|		bis 30.01.24 um einen Tag Puffer zu haben|		22.01.2024|		30.01.24|		!|
 |	15	|	x	|	UseCase |	Yasha + Andreas	|		|		|		30.01.24|		!!|
-
+|	16	|		|	UseCase |		|		|		|		31.01.24|		|
 
 
 
