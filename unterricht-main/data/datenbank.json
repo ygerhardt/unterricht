@@ -1,0 +1,46 @@
+{
+    "dict_pasta_sorte": {
+        "01": {"Beschreibung": "Spaghetti", "Preis": 5.0},
+        "02": {"Beschreibung": "Rigatoni", "Preis": 4.0},
+        "03": {"Beschreibung": "Penne", "Preis": 5.0}
+    },
+    "dict_pizza_groesse": {
+        "01": {"Beschreibung": "26cm", "Preis": 3.0},
+        "02": {"Beschreibung": "32cm", "Preis": 4.0},
+        "03": {"Beschreibung": "45cm", "Preis": 5.0}
+    },
+    "dict_eis_sorten": {
+        "01": {"Beschreibung": "Spaghettieis", "Preis": 3.0},
+        "02": {"Beschreibung": "Wassereiseis", "Preis": 1.0},
+        "03": {"Beschreibung": "Eiskugeln", "Preis": 2.0}
+    },
+    "dict_geschmack": {
+        "01": {"Beschreibung": "Schokolade", "Preis": 1.0},
+        "02": {"Beschreibung": "Erdbeere", "Preis": 1.0},
+        "03": {"Beschreibung": "Vanille", "Preis": 1.0},
+        "04": {"Beschreibung": "Blauer Engel", "Preis": 2.0},
+        "05": {"Beschreibung": "Stracciatella", "Preis": 1.0},
+        "06": {"Beschreibung": "Leberkäs", "Preis": 1.0}
+    },
+    "dict_zutaten": {
+        "01": {"Beschreibung": "Salami", "Preis": 1.0},
+        "02": {"Beschreibung": "Pilze", "Preis": 1.0},
+        "03": {"Beschreibung": "Brokkoli", "Preis": 1.5},
+        "04": {"Beschreibung": "Schinken", "Preis": 1.0},
+        "05": {"Beschreibung": "Paprika", "Preis": 2.0},
+        "06": {"Beschreibung": "Oliven", "Preis": 2.0}
+    },
+    "dict_sauce": {
+        "01": {"Beschreibung": "Tomatensauce", "Preis": 1.0},
+        "02": {"Beschreibung": "Hackfleischsauce", "Preis": 1.0},
+        "03": {"Beschreibung": "Carbonarasauce", "Preis": 1.5},
+        "04": {"Beschreibung": "Barbecuesauce", "Preis": 1.0},
+        "05": {"Beschreibung": "Creme-Fraiche-Sauce", "Preis": 2.0}
+    },
+    "dict_scharf": {
+        "01": {"Beschreibung": "scharf", "Preis": 1.5}
+    },
+    "dict_extrakaese": {
+        "01": {"Beschreibung": "extra Kaese", "Preis": 2.0}
+    }
+}
