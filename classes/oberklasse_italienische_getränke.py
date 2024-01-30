@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class ItalienischeDesserts(ABC):
+class Italienische_Getraenke(ABC):
     """
     Abstrakte Oberklasse für italienische Desserts.
     """
@@ -17,7 +17,7 @@ class ItalienischeDesserts(ABC):
         self.zubereitungsdetails = ""
 
     @abstractmethod
-    def dessert_zubereiten(self, geschmack):
+    def getraenk_zubereiten(self, auswahl):
         """
         Abstrakte Methode zum Zusammenstellen und Zubereiten des Desserts. Diese Methode soll in jeder Unterklasse
         implementiert werden und ist verantwortlich für die Verarbeitung der ausgewählten Zutaten und die
@@ -54,8 +54,6 @@ class ItalienischeDesserts(ABC):
         """
         pass
 
-    # Die übrigen Hilfsmethoden (erfasse_optionen und erfasse_bestellung) bleiben unverändert.
-    # Sie können je nach Bedarf angepasst werden.
     def erfasse_optionen(self, optionenTyp, mehrfachauswahl=False):
         """
         Erlaubt dem Benutzer, Optionen aus einem Dictionary von Optionen zu wählen.
@@ -115,6 +113,6 @@ class ItalienischeDesserts(ABC):
             dict: Die gesamte zusammengestellte Bestellung, einschließlich der Hauptkomponente, Zutaten, Sauce und zusätzlichen Optionen.
         """
         bestellung = self.waehle_option()
-        self.dessert_zubereiten(bestellung)
+        self.getraenk_zubereiten(bestellung)
         
         return bestellung

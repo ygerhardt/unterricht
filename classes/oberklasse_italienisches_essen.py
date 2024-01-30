@@ -114,7 +114,7 @@ class Italienisches_Essen(ABC):
 
         return ausgewaehlteOptionen
 
-    def erfasse_bestellung(self, hauptkomponente):
+    def erfasse_bestellung(self):
         """
         Erfasst eine Bestellung, indem sie die Hauptkomponente (z.B. Größe der Pizza oder Sorte der Pasta),
         Zutaten, Sauce und zusätzliche Optionen wie 'scharf' und 'extra Käse' kombiniert.
@@ -128,13 +128,15 @@ class Italienisches_Essen(ABC):
         Returns:
             dict: Die gesamte zusammengestellte Bestellung, einschließlich der Hauptkomponente, Zutaten, Sauce und zusätzlichen Optionen.
         """
+        
         optionenTypen = ['dict_zutaten', 'dict_sauce', 'dict_scharf', 'dict_extrakaese']
         mehrfachauswahl = [True, False, False, False]
-        bestellung = {**hauptkomponente}
+
+        bestellung = self.waehle_option()
 
         for optionenTyp, mehrfach in zip(optionenTypen, mehrfachauswahl):
             bestellung.update(self.erfasse_optionen(optionenTyp, mehrfach))
 
         self.essen_kochen(bestellung)
-        
+
         return bestellung
