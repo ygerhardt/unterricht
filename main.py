@@ -6,7 +6,17 @@ import sys
 from classes.klasse_pizza import Pizza
 from classes.klasse_pasta import Pasta
 from classes.klasse_eis import Eis
+from classes.klasse_getraenke import Getraenke
 from PIL import Image, ImageTk
+
+# setze absoluten Pfad
+def setze_root_verzeichnis():
+    """
+    Setzt das Verzeichnis, in dem das ausführende Skript liegt, als Root-Verzeichnis.
+    """
+    abspath = os.path.abspath(__file__)  # Absoluter Pfad der ausführenden Datei
+    dname = os.path.dirname(abspath)  # Verzeichnisname der Datei
+    os.chdir(dname)  # Wechsle das aktuelle Arbeitsverzeichnis zu diesem Verzeichnis
 
 # dateioperationen
 def lade_datenbank():
@@ -14,8 +24,8 @@ def lade_datenbank():
         with open("data/datenbank.json", "r") as file:
              return json.load(file)
     except (FileNotFoundError, json.JSONDecodeError, KeyError) as e:
-        print(f"Fehler beim Laden der Datenbank: {e}")
-        sys.exit("Das Programm wird beendet, da die Datenbank nicht geladen werden kann.")
+        print(f"\nFehler beim Laden der Datenbank: {e}")
+        sys.exit("Das Programm wird beendet, da die Datenbank nicht geladen werden kann.\n")
         
 def speichere_bestellung(bestellung, gesamtpreis):
     bestellungen = []
@@ -25,16 +35,16 @@ def speichere_bestellung(bestellung, gesamtpreis):
         with open("data/bestellung.json", "w") as file:
             json.dump(bestellungen, file, ensure_ascii=False, indent=4)
     except IOError as e:
-        print(f"Fehler beim Schreiben der Bestellungsdatei: {e}")
-        sys.exit("Das Programm wird beendet.")
+        print(f"\nFehler beim Schreiben der Bestellungsdatei: {e}")
+        sys.exit("Das Programm wird beendet.\n")
 
 # bild und sound
-def zeige_bild(bild):
+def zeige_bild(bildpfad):
     root = Tk.Tk()
     root.title("Bildanzeige für das gewählte Gericht")
     root.attributes("-topmost", True)
 
-    img = bild
+    img = Image.open(bildpfad)
     tk_img = ImageTk.PhotoImage(img)
     label = Tk.Label(root, image=tk_img)
     label.pack()
@@ -58,40 +68,38 @@ def zeige_bestellung_und_preis(gericht):
     print(f"Preis: {preis:.2f}\u20AC") # \u20AC = €
     return preis
 
-def verarbeite_bestellung(gericht, datenbank, bild):
-    zeige_bild(bild)
+def verarbeite_bestellung(gericht, datenbank, bildpfad):
     bestellung = gericht(datenbank)
-    auswahl = bestellung.waehle_option()
-    bestell_details = bestellung.erfasse_bestellung(auswahl)
+    bestell_details = bestellung.erfasse_bestellung()
     preis = zeige_bestellung_und_preis(bestellung)
     speichere_bestellung(bestell_details, preis)
+    zeige_bild(bildpfad)
     return preis
 
+# main
 def main():
+    setze_root_verzeichnis()
     datenbank = lade_datenbank()
     gesamtpreis = 0
-    bild_pasta = Image.open("data/bilder/nudeln_spaghetti.jpg")
-    bild_eis = Image.open("data/bilder/stockice.jpg")
-    bild_pizza = Image.open("data/bilder/pizzastock.jpg")
-
+    
     while True:
-        auswahl = input("Willkommen im Restaurant 'FIAE A'. Was möchten Sie bestellen? (01: Pizza, 02: Pasta, 03: Eis): ")
+        auswahl = input("Willkommen im Restaurant 'FIAE A'. Was möchten Sie tun? (01: Pizza bestellen, 02: Pasta bestellen, 03: Eis bestellen, 04: Getraenke bestellen, 05: Beenden): ")
         print()
         if auswahl == "01":
-            bild = bild_pizza
-            gesamtpreis += verarbeite_bestellung(Pizza, datenbank, bild)
+            gesamtpreis += verarbeite_bestellung(Pizza, datenbank, "data/bilder/pizzastock.jpg")
         elif auswahl == "02":
-            bild = bild_pasta
-            gesamtpreis += verarbeite_bestellung(Pasta, datenbank, bild)
+            gesamtpreis += verarbeite_bestellung(Pasta, datenbank, "data/bilder/nudeln_spaghetti.jpg")
         elif auswahl == "03":
-            bild = bild_eis
-            gesamtpreis += verarbeite_bestellung(Eis, datenbank, bild)
+            gesamtpreis += verarbeite_bestellung(Eis, datenbank, "data/bilder/stockice.jpg")
+        elif auswahl == "04":
+            gesamtpreis += verarbeite_bestellung(Getraenke, datenbank, "data/bilder/getraenke.jpg")
+        elif auswahl == "05": sys.exit("\nDas Programm wird beendet.\n")
         else:
             print("Ungültige Auswahl. Bitte wählen Sie '01' für Pizza, '02' für Pasta oder '03' für Eis.\n")
             continue
 
         fortsetzen = input("\nDarf es noch etwas sein? (ja/nein): ").lower()
-        if fortsetzen == 'ja':
+        if fortsetzen != 'nein':
             print()
             continue
         else:
@@ -99,9 +107,7 @@ def main():
             break
 
     print(f"\nVielen Dank für Ihre Bestellung! Bitte bezahlen Sie {gesamtpreis:.2f}\u20AC.")
-
-    if os.path.exists("data/bestellung.json"):
-        os.remove("data/bestellung.json")
+    os.remove("data/bestellung.json")
 
 if __name__ == "__main__":
     main()

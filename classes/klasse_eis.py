@@ -28,10 +28,9 @@ class Eis(ItalienischeDesserts):
             dict: Ein Dictionary, das die vom Benutzer ausgewählte Eissorte und deren Preis enthält. 
             Das Dictionary enthält genau einen Eintrag mit der Beschreibung der Sorte als Schlüssel und dem Preis als Wert.
         """
-        geschmacksrichtungen = self.datenbank['dict_geschmack']
-        ausgewaehlter_geschmack = self.erfasse_optionen('dict_geschmack', mehrfachauswahl=False)
-        
-        return self.erfasse_optionen('dict_eis_sorten')
+        geschmacksrichtungen = self.erfasse_optionen('dict_geschmack', mehrfachauswahl=True)
+        eissorte = self.erfasse_optionen('dict_eis_sorten', mehrfachauswahl=False)
+        return {**geschmacksrichtungen, **eissorte}
 
     def dessert_zubereiten(self, zutaten):
         """
