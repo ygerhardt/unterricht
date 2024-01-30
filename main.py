@@ -29,12 +29,12 @@ def speichere_bestellung(bestellung, gesamtpreis):
         sys.exit("Das Programm wird beendet.")
 
 # bild und sound
-def zeige_bild():
+def zeige_bild(bild):
     root = Tk.Tk()
     root.title("Bildanzeige für das gewählte Gericht")
     root.attributes("-topmost", True)
 
-    img = Image.open("data/bilder/nudeln_spaghetti.jpg")
+    img = bild
     tk_img = ImageTk.PhotoImage(img)
     label = Tk.Label(root, image=tk_img)
     label.pack()
@@ -58,8 +58,8 @@ def zeige_bestellung_und_preis(gericht):
     print(f"Preis: {preis:.2f}\u20AC") # \u20AC = €
     return preis
 
-def verarbeite_bestellung(gericht, datenbank):
-    zeige_bild()
+def verarbeite_bestellung(gericht, datenbank, bild):
+    zeige_bild(bild)
     bestellung = gericht(datenbank)
     auswahl = bestellung.waehle_option()
     bestell_details = bestellung.erfasse_bestellung(auswahl)
@@ -70,16 +70,22 @@ def verarbeite_bestellung(gericht, datenbank):
 def main():
     datenbank = lade_datenbank()
     gesamtpreis = 0
+    bild_pasta = Image.open("data/bilder/nudeln_spaghetti.jpg")
+    bild_eis = Image.open("data/bilder/stockice.jpg")
+    bild_pizza = Image.open("data/bilder/pizzastock.jpg")
 
     while True:
         auswahl = input("Willkommen im Restaurant 'FIAE A'. Was möchten Sie bestellen? (01: Pizza, 02: Pasta, 03: Eis): ")
         print()
         if auswahl == "01":
-            gesamtpreis += verarbeite_bestellung(Pizza, datenbank)
+            bild = bild_pizza
+            gesamtpreis += verarbeite_bestellung(Pizza, datenbank, bild)
         elif auswahl == "02":
-            gesamtpreis += verarbeite_bestellung(Pasta, datenbank)
+            bild = bild_pasta
+            gesamtpreis += verarbeite_bestellung(Pasta, datenbank, bild)
         elif auswahl == "03":
-            gesamtpreis += verarbeite_bestellung(Eis, datenbank)
+            bild = bild_eis
+            gesamtpreis += verarbeite_bestellung(Eis, datenbank, bild)
         else:
             print("Ungültige Auswahl. Bitte wählen Sie '01' für Pizza, '02' für Pasta oder '03' für Eis.\n")
             continue
