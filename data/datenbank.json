@@ -20,7 +20,7 @@
         "03": {"Beschreibung": "Vanille", "Preis": 1.0},
         "04": {"Beschreibung": "Blauer Engel", "Preis": 2.0},
         "05": {"Beschreibung": "Stracciatella", "Preis": 1.0},
-        "06": {"Beschreibung": "Leberkäs", "Preis": 1.0}
+        "06": {"Beschreibung": "Leberkaes", "Preis": 1.0}
     },
     "dict_zutaten": {
         "01": {"Beschreibung": "Salami", "Preis": 1.0},
