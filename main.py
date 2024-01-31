@@ -3,20 +3,16 @@ import os
 import tkinter as Tk
 import pygame
 import sys
-from classes.klasse_pizza import Pizza
-from classes.klasse_pasta import Pasta
-from classes.klasse_eis import Eis
+from classes.klasse_speisen import Speisen
+from classes.klasse_dessert import Dessert
 from classes.klasse_getraenke import Getraenke
 from PIL import Image, ImageTk
 
 # setze absoluten Pfad
 def setze_root_verzeichnis():
-    """
-    Setzt das Verzeichnis, in dem das ausführende Skript liegt, als Root-Verzeichnis.
-    """
-    abspath = os.path.abspath(__file__)  # Absoluter Pfad der ausführenden Datei
-    dname = os.path.dirname(abspath)  # Verzeichnisname der Datei
-    os.chdir(dname)  # Wechsle das aktuelle Arbeitsverzeichnis zu diesem Verzeichnis
+    abspath = os.path.abspath(__file__)
+    dname = os.path.dirname(abspath) 
+    os.chdir(dname) 
 
 # dateioperationen
 def lade_datenbank():
@@ -63,51 +59,74 @@ def spiele_sound():
 
 # preisberechnung und verarbeitung
 def zeige_bestellung_und_preis(gericht):
-    print("\nIhre Bestellung:", gericht.zubereitungsdetails)
+    print("Ihre Bestellung:", gericht.zubereitungsdetails)
     preis = sum(gericht.zutaten.values())
     print(f"Preis: {preis:.2f}\u20AC") # \u20AC = €
     return preis
 
-def verarbeite_bestellung(gericht, datenbank, bildpfad):
-    bestellung = gericht(datenbank)
+def verarbeite_bestellung(gericht, datenbank, bildpfad, gericht_typ=None):
+    if gericht_typ is None:
+        bestellung = gericht(datenbank)
+    else:
+        bestellung = gericht(datenbank, gericht_typ)
     bestell_details = bestellung.erfasse_bestellung()
     preis = zeige_bestellung_und_preis(bestellung)
     speichere_bestellung(bestell_details, preis)
     zeige_bild(bildpfad)
     return preis
 
+def zeige_gesamte_bestellung():
+    try:
+        with open("data/bestellung.json", "r") as file:
+            bestellungen = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError, KeyError) as e:
+        print(f"\nFehler beim Laden der Bestellungsdatei: {e}")
+        sys.exit("Das Programm wird beendet.\n")
+
+    print("\nIhre gesamte Bestellung:")
+    for i, bestellung in enumerate(bestellungen, 1):
+        print(f"\nBestellung {i}:")
+        bestellungsdetails = ', '.join(f"{zutat}: {preis:.2f}\u20AC" for zutat, preis in bestellung["Bestellung"].items())
+        print("Bestellungsdetails:", bestellungsdetails)
+        print(f"Gesamtpreis: {bestellung['Gesamtpreis']:.2f}\u20AC")
+
 # main
 def main():
     setze_root_verzeichnis()
     datenbank = lade_datenbank()
     gesamtpreis = 0
-    
+
+    menu_optionen = {
+        "01": {"klasse": Speisen, "bild": "data/bilder/pizzastock.jpg", "gericht_typ": "Pizza"},
+        "02": {"klasse": Speisen, "bild": "data/bilder/nudeln_spaghetti.jpg", "gericht_typ": "Pasta"},
+        "03": {"klasse": Dessert, "bild": "data/bilder/stockice.jpg"},
+        "04": {"klasse": Getraenke, "bild": "data/bilder/getraenke.jpg"},
+    }
+
     while True:
         auswahl = input("Willkommen im Restaurant 'FIAE A'. Was möchten Sie tun? (01: Pizza bestellen, 02: Pasta bestellen, 03: Eis bestellen, 04: Getraenke bestellen, 05: Beenden): ")
         print()
-        if auswahl == "01":
-            gesamtpreis += verarbeite_bestellung(Pizza, datenbank, "data/bilder/pizzastock.jpg")
-        elif auswahl == "02":
-            gesamtpreis += verarbeite_bestellung(Pasta, datenbank, "data/bilder/nudeln_spaghetti.jpg")
-        elif auswahl == "03":
-            gesamtpreis += verarbeite_bestellung(Eis, datenbank, "data/bilder/stockice.jpg")
-        elif auswahl == "04":
-            gesamtpreis += verarbeite_bestellung(Getraenke, datenbank, "data/bilder/getraenke.jpg")
-        elif auswahl == "05": sys.exit("\nDas Programm wird beendet.\n")
+        if auswahl in menu_optionen:
+            option = menu_optionen[auswahl]
+            gesamtpreis += verarbeite_bestellung(option["klasse"], datenbank, option["bild"], gericht_typ=option.get("gericht_typ"))
+        elif auswahl == "05": 
+            sys.exit("\nDas Programm wird beendet.\n")
         else:
-            print("Ungültige Auswahl. Bitte wählen Sie '01' für Pizza, '02' für Pasta oder '03' für Eis.\n")
+            print("Ungültige Auswahl. Bitte wählen Sie '01' Pizza, '02' für Pasta ,'03' für Eis, '04' für Getraenke oder '05' für Beenden.\n")
             continue
 
-        fortsetzen = input("\nDarf es noch etwas sein? (ja/nein): ").lower()
-        if fortsetzen != 'nein':
-            print()
-            continue
-        else:
-            spiele_sound()
-            break
-
-    print(f"\nVielen Dank für Ihre Bestellung! Bitte bezahlen Sie {gesamtpreis:.2f}\u20AC.")
-    os.remove("data/bestellung.json")
+        while True:
+            fortsetzen = input("\nDarf es noch etwas sein? (ja/nein): ").lower()
+            if fortsetzen == 'ja':
+                print()
+                break
+            elif fortsetzen == 'nein':
+                zeige_gesamte_bestellung()
+                print(f"\nVielen Dank für Ihre Bestellung! Bitte bezahlen Sie {gesamtpreis:.2f}\u20AC.")
+                os.remove("data/bestellung.json")
+                return
+            else:
+                print("\nUngültige Eingabe. Bitte antworten Sie mit 'ja' oder 'nein'.")
 
 if __name__ == "__main__":
     main()

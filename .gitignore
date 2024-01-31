@@ -1,5 +1,4 @@
 ﻿.vs
-data/unterricht-main/bestellung.json
-__pycache__
+data/bestellung.json
 gui/__pycache__
 classes/__pycache__
