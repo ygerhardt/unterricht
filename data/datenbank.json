@@ -5,9 +5,9 @@
         "03": {"Beschreibung": "Penne", "Preis": 5.0}
     },
     "dict_pizza_groesse": {
-        "01": {"Beschreibung": "26cm", "Preis": 3.0},
-        "02": {"Beschreibung": "32cm", "Preis": 4.0},
-        "03": {"Beschreibung": "45cm", "Preis": 5.0}
+        "01": {"Beschreibung": "Pizza 26cm", "Preis": 3.0},
+        "02": {"Beschreibung": "Pizza 32cm", "Preis": 4.0},
+        "03": {"Beschreibung": "Pizza 45cm", "Preis": 5.0}
     },
     "dict_eis_sorten": {
         "01": {"Beschreibung": "Spaghettieis", "Preis": 3.0},
@@ -37,11 +37,10 @@
         "04": {"Beschreibung": "Barbecuesauce", "Preis": 1.0},
         "05": {"Beschreibung": "Creme-Fraiche-Sauce", "Preis": 2.0}
     },
-    "dict_scharf": {
-        "01": {"Beschreibung": "scharf", "Preis": 1.5}
-    },
-    "dict_extrakaese": {
-        "01": {"Beschreibung": "extra Kaese", "Preis": 2.0}
+    "dict_zusatzoptionen": {
+        "00": {"Beschreibung": "keine", "Preis": 0.0},
+        "01": {"Beschreibung": "scharf", "Preis": 1.5},
+        "02": {"Beschreibung": "extra Kaese", "Preis": 2.0}
     },
     "dict_kaltgetraenke": {
         "01": {"Beschreibung": "Cola", "Preis": 1.0},

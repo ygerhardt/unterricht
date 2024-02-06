@@ -2,14 +2,18 @@ import customtkinter
 import webbrowser
 from customtkinter import *
 from tkinter import *
-from PIL import Image, ImageTk
-from klasse_food_frame import Food_frame
+from PIL import Image
+import os
 
 
 customtkinter.set_appearance_mode("dark")
 
-
 class App(customtkinter.CTk):
+    def setze_root_verzeichnis():
+        abspath = os.path.abspath(__file__)
+        dname = os.path.dirname(abspath) 
+        os.chdir(dname) 
+
     def __init__(self):
         super().__init__()
         
@@ -22,7 +26,6 @@ class App(customtkinter.CTk):
                               dark_image=Image.open("gui\pictures\Papa python logo.png"),
                               size=(180,180))
 
-        menu_image= CTkImage(Image.open("gui\\pictures\\icons\\menu.png"), size=(20,20))
         pizza_label_icon = CTkImage(Image.open("gui\\pictures\\icons\\pizza_icon.png"), size=(60,60))
         pasta_label_icon = CTkImage(Image.open("gui\\pictures\\icons\\pasta_icon.png"), size=(60,60))
         dessert_label_icon = CTkImage(Image.open("gui\\pictures\\icons\\dessert_icon.png"), size=(60,60))
@@ -48,19 +51,11 @@ class App(customtkinter.CTk):
         
         self.light_mode_switch_frame =CTkFrame(master=self.switch_frame, width=180,height=160, border_color= "grey", border_width=2, corner_radius=12)
         self.light_mode_switch_frame.place(relx=0.030, rely=0.074)
-
-        self.menu_frame = CTkFrame(master=self.link_frame, width=200,height=30)
-        self.menu_frame.place(relx=0.14, rely=0.04)
-
-        self.deliver_frame = CTkFrame(master=self.link_frame, width=200,height=30)
-        self.deliver_frame.place(relx=0.14, rely=0.11)
         
         self.contact_frame = CTkFrame(master=self.link_frame, width=200,height=30)
         self.contact_frame.place(relx=0.14, rely=0.18)
 
-
-
-        #Frames that are in the middle of the app
+     #Frames that are in the middle of the app
         self.middle_frame = CTkFrame(master=self, width=600, height=782, border_color="grey", border_width=2, corner_radius=12) 
         self.middle_frame.place(relx=0.185, rely=0.01)
 
@@ -107,12 +102,6 @@ class App(customtkinter.CTk):
         self.food_scrollable = CTkScrollableFrame(master=self.scrollable_border_frame, width=542, height=628, scrollbar_button_color="#7cbfb1", scrollbar_button_hover_color="#b3e6db")
         self.food_scrollable.place(relx=0.01, rely=0.009)
 
-        test_food_frame = Food_frame(self.food_scrollable, None)
-
-        for i in range(1,12):
-            i = Food_frame(self.food_scrollable, None)
-
-
         #Frames that are on the right side of the app
         self.order_frame = CTkFrame(master=self, width=360, height=782, border_color="grey", border_width=2, corner_radius=12)
         self.order_frame.place(relx=0.694,rely=0.01)
@@ -130,35 +119,7 @@ class App(customtkinter.CTk):
         self.payment_frame.place(relx=0.016, rely=0.9)
 
 
-        #Buttons
-        self.menu_button = CTkButton(master=self.menu_frame, 
-                                     width=140, 
-                                     height=30, 
-                                     image=menu_image, 
-                                     text="Speisekarte", 
-                                     border_width=3,
-                                     border_color="#0a5c5c", 
-                                     corner_radius=20, 
-                                     fg_color="#7cbfb1", 
-                                     text_color="black", 
-                                     hover=True, 
-                                     hover_color="#b3e6db",
-                                     command=self.open_food_card)
-        self.menu_button.pack()
-
-        self.self_create_button = CTkButton(master=self.deliver_frame,
-                                        width=140, 
-                                        height=30, 
-                                        text="Make your own!", 
-                                        border_width=3,
-                                        border_color="#0a5c5c", 
-                                        corner_radius=20, 
-                                        fg_color="#7cbfb1", 
-                                        text_color="black", 
-                                        hover=True, 
-                                        hover_color="#b3e6db")
-        self.self_create_button.pack()
-
+        #Button
         self.contact_button = CTkButton(master=self.contact_frame, 
                                         width=140, 
                                         height=30, 
@@ -178,15 +139,7 @@ class App(customtkinter.CTk):
                                            switch_height=20,switch_width=40,
                                            border_width=2, border_color="grey", corner_radius=12,
                                            command=self.switch_to_light_mode)
-        self.light_mode_switch.pack()
-    
-    def open_food_card(self):
-            food_card = CTkImage(Image.open("gui\\pictures\\Speisekarte_FIAE.png"), size=(1080,1080))
-            self.food_card_window = CTkToplevel(self)
-            self.food_card_window.geometry(f"{1080}x{1080}")
-            self.food_card_window.title("FIAE Restaurant - Speisekarte")
-            self.food_card_image_frame = CTkLabel(master=self.food_card_window, image=food_card, width=1080,height=1080, text="")
-            self.food_card_image_frame.pack()    
+        self.light_mode_switch.pack() 
         
     def switch_to_light_mode(self):
         button_value = self.light_mode_switch.get()
@@ -204,5 +157,6 @@ class App(customtkinter.CTk):
        
 
 if __name__ == "__main__":
+    App.setze_root_verzeichnis
     app = App()
     app.mainloop()

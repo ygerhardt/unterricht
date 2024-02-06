@@ -1,0 +1,58 @@
+{
+    "Speisen": {
+      "Saucen": ["Tomatensauce", "Hackfleischsauce", "Carbonarasauce", "Barbecuesauce", "Creme-Fraiche-Sauce"],
+      "PreisSaucen": [0.5, 0.5, 0.5, 0.5, 0.5],
+      "Extras": ["ohne Extras", "scharf", "Extra Käse"],
+      "PreisExtras": [0.5, 0.5, 0.5],
+
+      "Pizza": {
+        "Beschreibung": ["26cm", "32cm", "45cm"],
+        "Preis": [3.0, 4.0, 5.0],
+        "Zutaten": ["Salami", "Pilze", "Brokkoli", "Schinken", "Paprika", "Oliven"],
+        "PreisZutaten": [0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+      },
+      "Pasta": {
+        "Beschreibung": ["Spaghetti", "Rigatoni", "Penne"],
+        "Preis": [4.0, 4.5, 5.0],
+        "Zutaten": ["Salami", "Pilze", "Brokkoli", "Schinken", "Paprika", "Oliven"],
+        "Preiszutaten": [0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+      }
+    },
+    "Getraenke": {
+      "Kaltgetraenke": {
+        "Beschreibung": ["Wasser", "Cola", "Orangensaft", "Apfelsaft"],
+        "Preis": [2.0, 2.5, 3.0, 3.0],
+        "Optionen": ["0.5l", "1l", "1.5l"],
+        "PreisOptionen": [0.0, 1.0, 2.0]
+      },
+      "Heissgetraenke": {
+        "Beschreibung": ["Espresso", "Cappuccino"],
+        "Preis": [2.5, 3.0],
+        "Optionen": {
+          "Geschmack": ["Vanille", "Karamell", "Haselnuss"],
+          "PreisGeschmack": [0.5, 0.5, 0.5],
+          "Zucker": ["Kein Zucker", "Wenig Zucker", "Normal", "Extra süss"],
+          "PreisZucker": [0.0, 0.5, 1.0, 1.5]
+        }
+      }
+    },
+    "Drinks": {
+      "Beschreibung": ["Aperol Spritz", "Limoncello"],
+      "Preis": [4.0, 3.5],
+      "Optionen": {
+        "Alkoholgehalt": ["Extra Aperol", "Alkoholfrei"],
+        "PreisAlkoholgehalt": [0.5, 0.0],
+        "Garnierung": ["Keine Garnierung", "Orangenscheibe", "Oliven"],
+        "PreisGarnierung": [0.0, 0.5, 1.0]
+      }
+    },
+    "Eis": {
+        "Beschreibung": ["Spaghettieis", "Wassereiseis", "Eiskugeln"],
+        "Preis": [3.0, 1.0, 2.0],
+        "Geschmack": ["Schokolade", "Erdbeere", "Vanille", "Blauer Engel", "Stracciatella", "Leberkaes"],
+        "PreisGeschmack": [1.0, 1.0, 1.0, 2.0, 1.0, 1.0],
+        "Extras": ["Sahne", "Streusel", "Schokosauce", "Karamellsauce"],
+        "PreisExtras": [0.5, 0.5, 0.5, 0.5]
+    }
+  }
+  
