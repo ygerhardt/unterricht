@@ -1,4 +1,4 @@
 ﻿.vs
 data/bestellung.json
-gui/__pycache__
-classes/__pycache__
+classes/gui/__pycache__
+classes/backend/__pycache__ 

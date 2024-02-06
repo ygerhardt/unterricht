@@ -3,9 +3,9 @@ import os
 import tkinter as Tk
 import pygame
 import sys
-from classes.klasse_speisen import Speisen
-from classes.klasse_dessert import Dessert
-from classes.klasse_getraenke import Getraenke
+from classes.backend.klasse_speisen import Speisen
+from classes.backend.klasse_dessert import Dessert
+from classes.backend.klasse_getraenke import Getraenke
 from PIL import Image, ImageTk
 
 # setze absoluten Pfad
@@ -109,8 +109,7 @@ def main():
         if auswahl in menu_optionen:
             option = menu_optionen[auswahl]
             gesamtpreis += verarbeite_bestellung(option["klasse"], datenbank, option["bild"], gericht_typ=option.get("gericht_typ"))
-        elif auswahl == "05": 
-            sys.exit("\nDas Programm wird beendet.\n")
+        elif auswahl == "05": sys.exit("Das Programm wird beendet.\n")
         else:
             print("Ungültige Auswahl. Bitte wählen Sie '01' Pizza, '02' für Pasta ,'03' für Eis, '04' für Getraenke oder '05' für Beenden.\n")
             continue

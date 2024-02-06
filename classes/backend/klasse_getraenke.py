@@ -1,4 +1,4 @@
-from classes.oberklasse_italienisches_restaurant import Italienisches_Restaurant
+from classes.backend.oberklasse_italienisches_restaurant import Italienisches_Restaurant
 
 class Getraenke(Italienisches_Restaurant):
     def __init__(self, datenbank):
